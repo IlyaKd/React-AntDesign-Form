@@ -52,7 +52,6 @@ export const ProfileForm: React.FC = () => {
   const handleEdit = () => setIsEditing(true);
 
   const handleCancel = () => {
-    // form.resetFields();
     form.setFieldsValue(initialValues);
     setIsEditing(false);
   };
@@ -190,24 +189,6 @@ export const ProfileForm: React.FC = () => {
           >
             <Input.TextArea disabled={!isEditing} maxLength={400} />
           </Form.Item>
-
-          {/* <Form.Item>
-          {!isEditing ? (
-            <Button type="primary" onClick={handleEdit}>
-              Изменить
-            </Button>
-          ) : (
-            <>
-              <Button type="primary" htmlType="submit">
-                Сохранить
-              </Button>
-              <Button type="default" onClick={handleCancel} style={{ marginLeft: '8px' }}>
-                Отмена
-              </Button>
-            </>
-          )}
-        </Form.Item> */}
-
           {isEditing && (
             <>
               <Button type="primary" htmlType="submit" disabled={!submittable}>
